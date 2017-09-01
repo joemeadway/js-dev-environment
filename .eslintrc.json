@@ -1,0 +1,21 @@
+
+{
+  "root": true, //root eslint file - don't walk up tree for more files
+  "extends": [
+    "eslint:recommended", //using the recommended ones
+    "plugin:import/errors", //add plugins for es6 imports errors and warnings
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7, //what version of js?
+    "sourceType": "module" //what module format?
+  },
+  "env": {
+    "browser": true, //what environments should be linted for?
+    "node": true,
+    "mocha": true
+  },
+  "rules": { //override rules
+  	"no-console": 1 //1 - warning, 2 - error, 0 - off
+  }
+}
