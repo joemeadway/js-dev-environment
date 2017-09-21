@@ -1,3 +1,18 @@
+<html lang="en">
+<head>
+    <!--
+    The htmlWebpackPlugin will parse the logic below so that trackJS is only added to the production version of index.html (since only webpack.config.prod.js provides the trackJS token)
+    This is an example of how to add features to index.html for only one environment.
+   -->
+    <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+    <!-- BEGIN TRACKJS -->
+    <script type="text/javascript">console.log('<%=htmlWebpackPlugin.options.trackJSToken%>');</script>
+
+    <!-- END TRACKJS -->
+    <% } %>
+  <meta charset="UTF-8">
+</head>
+<body>
 <h1>Users</h1>
 
 <table>
@@ -11,5 +26,5 @@
 	<tbody id="users"></tbody>
 </table>
 
-<script src="bundle.js"></script>
 
+</body>
